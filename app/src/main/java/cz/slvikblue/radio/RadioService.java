@@ -51,7 +51,7 @@ public class RadioService extends Service {
         boolean playing=player!=null&&player.isPlaying();
         b.setSmallIcon(android.R.drawable.ic_media_play).setContentTitle(station==null?"Internet Radio":station).setContentText(text)
          .setOngoing(playing||streamUrl!=null).addAction(playing?android.R.drawable.ic_media_pause:android.R.drawable.ic_media_play,playing?"Pauza":"Pokračovat",action(TOGGLE,2))
-         .addAction(android.R.drawable.ic_media_stop,"Zastavit",action(STOP,3));
+        .addAction(android.R.drawable.ic_media_pause,"Zastavit",action(STOP,5));
         return b.build();
     }
     private void updateNotification(){updateNotification(player!=null&&player.isPlaying()?"Právě hraje":"Pozastaveno");}
